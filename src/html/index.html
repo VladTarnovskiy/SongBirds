@@ -1,44 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <title>Song Birds</title>
+  </head>
+  <body>
     <div class="container">
-        <header class="header">
-            <div class="header__title">
-                <div class="header__logo"></div>
-                <div class="header__score">Score: <span class="score__couner">0</span></div>
+      <header class="header">
+        <div class="header__title">
+          <div class="header__logo"></div>
+          <div class="header__score">
+            Score:
+            <span class="score__couner"> <a href="./greeting.html">0</a> </span>
+          </div>
+        </div>
+        <ul class="level-display">
+          <li class="level-display__item">Разминка</li>
+          <li class="level-display__item">Воробьиные</li>
+          <li class="level-display__item">Лесные птицы</li>
+          <li class="level-display__item">Певчие птицы</li>
+          <li class="level-display__item">Хищные птицы</li>
+          <li class="level-display__item">Морские птицы</li>
+        </ul>
+      </header>
+      <main>
+        <section class="player">
+          <div class="player__img"></div>
+          <div class="player__display">
+            <div class="player__title">******</div>
+            <div class="player__controls">
+              <div class="player__but"></div>
+              <div class="player__progress">
+                <div class="player__progress-line"></div>
+                <div class="player__progress-checker"></div>
+                <div class="player__progress-time-current">00:00</div>
+                <div class="player__progress-time-full">00:00</div>
+              </div>
             </div>
-            <ul class="level-display">
-                <li class="level-display__item">Разминка</li>
-                <li class="level-display__item">Воробьиные</li>
-                <li class="level-display__item">Лесные птицы</li>
-                <li class="level-display__item">Певчие птицы</li>
-                <li class="level-display__item">Хищные птицы</li>
-                <li class="level-display__item">Морские птицы</li>
-            </ul>
-        </header>
-        <main>
-            <div class="player">
-                <div class="player__img"></div>
-                <div class="player__display">
-                    <div class="player__title">******</div>
-                    <div class="player__controls">
-                        <div class="player__but"></div>
-                        <div class="player__progress">
-                            <div class="player__progress-line"></div>
-                            <div class="player__progress-checker"></div>
-                            <div class="player__progress-time-current">00:00</div>
-                            <div class="player__progress-time-full">00:00</div>
-                        </div>
-                    </div>
-                </div>
+          </div>
+        </section>
+        <section class="birds-group">
+          <article class="birds-choosing">
+            <div class="birds-choosing__item">
+              <span class="birds-group__marker"></span>Ворон
             </div>
-        </main>
+            <div class="birds-choosing__item">
+              <span class="birds-group__marker"></span>Журавль
+            </div>
+            <div class="birds-choosing__item">
+              <span class="birds-group__marker"></span>Ласточка
+            </div>
+            <div class="birds-choosing__item">
+              <span class="birds-group__marker"></span>Козодой
+            </div>
+            <div class="birds-choosing__item">
+              <span class="birds-group__marker"></span>Кукушка
+            </div>
+            <div class="birds-choosing__item">
+              <span class="birds-group__marker"></span>Синица
+            </div>
+          </article>
+          <article class="bird-description">
+            Послушайте плеер.
+            <br />
+            Выберите птицу из списка
+          </article>
+        </section>
+        <button class="next-level-btn">Next Level</button>
+      </main>
     </div>
-</body>
+  </body>
 </html>

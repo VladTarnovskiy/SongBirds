@@ -1,3 +1,3 @@
 import '../html/index.html'
-import '../scss/main.scss'
+import '../scss/index.scss'
 import birdsData from './moduls/birds'
