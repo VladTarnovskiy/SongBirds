@@ -1,3 +1,5 @@
 import '../html/index.html'
 import '../scss/index.scss'
-import birdsData from './moduls/birds'
+import './moduls/birds'
+import './components/audio'
+import './components/game-logic'

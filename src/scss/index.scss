@@ -3,8 +3,9 @@
 @import './abstracts/variables';
 // @import './base/fonts';
 @import './base/normalize';
+@import './base/common';
 @import './layout/header';
 @import './layout/footer';
+@import './components/birds-background';
+@import './components/icons';
 @import './pages/main-page';
-
-

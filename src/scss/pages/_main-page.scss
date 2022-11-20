@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Arima Madurai', cursive;
     font-size: 0.9375rem;
     font-weight: 400;
     line-height: 1.5;
@@ -10,25 +10,26 @@ body {
     background-color: $dark;
 }
 
-.container{
+.container {
+    position: relative;
+    z-index: 10;
     max-width: 1220px;
+    width: 100%;
     padding-right: 40px;
     padding-left: 40px;
-    margin-left: auto;
-    margin-right: auto;
 }
 
 //Header
 
-.header{
-    margin-top: 20px;
+.header {
+    margin-top: 30px;
 
-    .header__title{
+    .header__title {
         display: flex;
         justify-content: space-between;
         align-items: center;
-    
-        .header__logo{
+
+        .header__logo {
             width: 200px;
             height: 55px;
             background-image: url(../../src/img/logo.svg);
@@ -37,27 +38,35 @@ body {
         }
     }
 
-    .level-display{
+    .score__couner {
+
+        a {
+            text-decoration: none;
+            color: $white;
+        }
+    }
+
+    .level-display {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: $green;
+        background: rgba($green, 0.5);
         padding: 0;
         height: 40px;
         border-radius: 5px;
 
-        .level-display__item{
-             width: 15%;
-             height: 100%;
-             display: flex;
-             justify-content: center;
-             align-items: center;
-             text-align: center;
+        .level-display__item {
+            width: 15%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
 
-             &:hover{
-                background-color: $green-light;
-                cursor: pointer;
-             }
+        .level-display__item_acive {
+            background-color: $green-light;
+            border-radius: 5px;
         }
     }
 }
@@ -66,15 +75,15 @@ body {
 
 //player
 
-.player{
+.player {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: $dark-grey;
+    background: rgba($dark-grey, 0.5);
     padding: 15px;
     border-radius: 5px;
 
-    .player__img{
+    .player__img {
         width: 200px;
         height: 155px;
         background-image: url(../../src/img/bird.jpg);
@@ -84,22 +93,22 @@ body {
         margin-right: 40px;
     }
 
-    .player__display{
+    .player__display {
         flex-grow: 1;
         align-self: flex-start;
 
-        .player__title{
+        .player__title {
             border-bottom: $light-grey 2px solid;
             font-size: 2rem;
             margin-bottom: 15px;
         }
 
-        .player__controls{
+        .player__controls {
             display: flex;
             justify-content: space-between;
             align-items: center;
 
-            .player__but{
+            .player__but {
                 width: 40px;
                 height: 40px;
                 border: 2px solid $green-light;
@@ -112,19 +121,28 @@ body {
                 background-size: 40px 40px;
                 background-position: center;
                 background-repeat: no-repeat;
+
+                &:hover {
+                    transform: scale(1.06);
+                }
             }
 
-            .player__progress{
+            .player__but.pause {
+                background-image: url(../../src/img/music-pause.svg);
+            }
+
+            .player__progress {
                 flex-grow: 1;
                 position: relative;
 
-                .player__progress-line{
+                .player__progress-line {
                     height: 3px;
                     width: 100%;
                     background-color: $light-grey;
+                    cursor: pointer;
                 }
 
-                .player__progress-checker{
+                .player__progress-checker {
                     position: absolute;
                     left: 0;
                     top: 50%;
@@ -133,38 +151,90 @@ body {
                     height: 20px;
                     border-radius: 50%;
                     background-color: $light-grey;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: $green-light;
+                    }
                 }
 
-                .player__progress-time-current{
+                .player__progress-time-current {
                     position: absolute;
                     left: 0;
                     bottom: -30px;
                 }
 
-                .player__progress-time-full{
-                     position: absolute;
-                     right: 0;
-                     bottom: -30px;
+                .player__progress-time-full {
+                    position: absolute;
+                    right: 0;
+                    bottom: -30px;
+                }
+
+                .volume-container {
+                    cursor: pointer;
+                    position: absolute;
+                    right: 0;
+                    top: -30px;
+                    width: 20px;
+                    z-index: 3;
+
+                    .volume-container__button {
+                        height: 26px;
+                        display: flex;
+                        align-items: center;
+
+                        .volume {
+                            transform: scale(0.7);
+                        }
+                    }
+
+                    .volume-container__slider {
+                        position: absolute;
+                        left: -3px;
+                        top: 5px;
+                        z-index: -1;
+                        width: 0;
+                        height: 15px;
+                        background: white;
+                        box-shadow: 0 0 20px rgba(0, 0, 0, 0.6666666667);
+                        transition: 0.25s;
+
+                        .volume-container__percentage {
+                            background: $green;
+                            height: 100%;
+                            width: 75%;
+                            transition: all 0.25s;
+                        }
+
+                    }
+                }
+
+                .volume-container:hover .volume-container__slider {
+                    left: -123px;
+                    width: 120px;
                 }
             }
         }
     }
 }
 
+.disabled {
+    display: none;
+}
+
 //birds group section
 
-.birds-group{
+.birds-group {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
     height: 315px;
 
-    .birds-choosing{
+    .birds-choosing {
         width: 48%;
-        // background-color: $dark-grey;
 
-        .birds-choosing__item{
+        .birds-choosing__item {
             height: 50px;
             padding-left: 15px;
             padding-right: 15px;
@@ -174,8 +244,14 @@ body {
             align-items: center;
             border: 1px solid $grey;
             border-radius: 5px;
+            background: rgba($dark-grey, 0.6);
+            cursor: pointer;
 
-            .birds-group__marker{
+            &:hover {
+                transform: scale(1.02);
+            }
+
+            .birds-group__marker {
                 display: inline-block;
                 width: 10px;
                 height: 10px;
@@ -186,18 +262,19 @@ body {
         }
     }
 
-    .bird-description{
+    .bird-description {
         width: 48%;
         height: 100%;
-        background-color: $dark-grey;
+        background: rgba($dark-grey, 0.6);
         padding: 15px;
         box-sizing: border-box;
         border-radius: 5px;
+        text-align: center;
     }
 }
 
-.next-level-btn{
-    background-color: $dark-grey;
+.next-level-btn {
+    background: rgba($dark-grey, 0.6);
     border: 1px solid $grey;
     height: 40px;
     width: 100%;
@@ -205,10 +282,8 @@ body {
     margin-top: 20px;
     color: $white;
 
-    &:hover{
+    &:hover {
         cursor: pointer;
-        transform: scale(1.01);
+        transform: scale(1.02);
     }
 }
-
-
