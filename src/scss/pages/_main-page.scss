@@ -93,6 +93,10 @@ body {
         margin-right: 40px;
     }
 
+    .player__img.hide-bird {
+        background-image: url(../../src/img/bird.jpg);
+    }
+
     .player__display {
         flex-grow: 1;
         align-self: flex-start;

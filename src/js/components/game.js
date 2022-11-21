@@ -1,5 +1,4 @@
 import birdsData from '../moduls/birds'
-import './game-logic'
 
 let level = 0
 let score = 0
@@ -9,13 +8,12 @@ let levelCountScore = 5
 const play = document.querySelector('.player__but')
 const audio = new Audio();
 let isPlay = false
-let birdNumber = getRandomNum(5)
+let birdNumber = getRandomNum(6)
 audio.src = birdsData[level][birdNumber].audio
 
 async function getAudio() {
     try {
         if (!isPlay) {
-            // audio.src = birdsData[level][birdNumber].audio
             play.classList.add('pause')
             isPlay = true
             audio.play()
@@ -114,7 +112,7 @@ const sectionBirdInfo = document.querySelector('.bird-description')
 const birdInfoPlayer = sectionBirdInfo.querySelector('.player')
 const birdInfoGuide = sectionBirdInfo.querySelector('.bird-description__guide')
 let birdNumberDes = 0
-
+let scoreFlag = false
 
 birdsGroup.forEach((item, index) => {
     item.addEventListener('click', () => {
@@ -132,22 +130,30 @@ birdsGroup.forEach((item, index) => {
 
 
         if (item.textContent.trim() == birdsData[level][birdNumber].name) {
+            if (!scoreFlag) {
+                score += levelCountScore
+                scoreCounter.textContent = score
+                levelCountScore = 5
+                scoreFlag = true
+            }
+            if (level == 5) {
+                window.location.href = './results.html'
+            }
             birdsMarker[index].style.background = '#008966'
             nextLevelButton.classList.add('next-level-btn_active')
-            score += levelCountScore
-            scoreCounter.textContent = score
             songName.textContent = birdsData[level][birdNumber].name
             getLinkToImageFl(birdsData[level][birdNumber].image)
             soundClick('./true-click.mp3')
         } else {
             birdsMarker[index].style.background = 'red'
             soundClick('./false-click.mp3')
-            if (levelCountScore >= 0) {
-                levelCountScore -= 1
-            } else {
-                levelCountScore = 0
+            if (!scoreFlag) {
+                if (levelCountScore > 0) {
+                    levelCountScore -= 1
+                } else {
+                    levelCountScore = 0
+                }
             }
-
         }
     })
 })
@@ -250,7 +256,7 @@ sectionBirdInfo.querySelector('.volume-container__button').addEventListener("cli
 //bird's image
 async function getLinkToImageFlDes(url) {
     const birdImageDes = sectionBirdInfo.querySelector('.player__img')
-    birdImageDes.style.backgroundImage = `url(${url})`
+    birdImageDes.style.backgroundImage = await `url(${url})`
 }
 
 //next level
@@ -260,23 +266,24 @@ const playerDes = sectionBirdInfo.querySelector('.player')
 
 nextLevelButton.addEventListener('click', () => {
     if (nextLevelButton.classList.contains('next-level-btn_active')) {
+        scoreFlag = false
         level += 1
+        birdNumber = getRandomNum(5)
+        audio.src = birdsData[level][birdNumber].audio
         playerDes.classList.add('disabled')
         birdInfoGuide.classList.remove('disabled')
         songDescription.textContent = ''
         songName.textContent = '******'
-        // getLinkToImageFl('../../src/img/bird.jpg')
+        const birdImage = document.querySelector('.player__img')
+        birdImage.style.removeProperty('background-image')
         changeSetBirds()
         removeMarkers()
         displayLevel()
-        console.log('ffffffff')
-
     }
 })
 
 function changeSetBirds() {
     birdItemsDescription.forEach((item, index) => {
-        console.log(birdsData[level][index].name)
         item.textContent = birdsData[level][index].name
     })
 }
