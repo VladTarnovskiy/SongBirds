@@ -72,23 +72,29 @@
         </section>
         <section class="birds-group">
           <article class="birds-choosing">
-            <div class="birds-choosing__item">
-              <span class="birds-group__marker"></span>Ворон
+            <div class="birds-choosing__item" data-bird-number="0">
+              <span class="birds-group__marker"></span
+              ><span class="birds-choosing__description">Ворон</span>
             </div>
-            <div class="birds-choosing__item">
-              <span class="birds-group__marker"></span>Журавль
+            <div class="birds-choosing__item" data-bird-number="1">
+              <span class="birds-group__marker"></span
+              ><span class="birds-choosing__description">Журавль</span>
             </div>
-            <div class="birds-choosing__item">
-              <span class="birds-group__marker"></span>Ласточка
+            <div class="birds-choosing__item" data-bird-number="2">
+              <span class="birds-group__marker"></span
+              ><span class="birds-choosing__description">Ласточка</span>
             </div>
-            <div class="birds-choosing__item">
-              <span class="birds-group__marker"></span>Козодой
+            <div class="birds-choosing__item" data-bird-number="3">
+              <span class="birds-group__marker"></span
+              ><span class="birds-choosing__description">Козодой</span>
             </div>
-            <div class="birds-choosing__item">
-              <span class="birds-group__marker"></span>Кукушка
+            <div class="birds-choosing__item" data-bird-number="4">
+              <span class="birds-group__marker"></span
+              ><span class="birds-choosing__description">Кукушка</span>
             </div>
-            <div class="birds-choosing__item">
-              <span class="birds-group__marker"></span>Синица
+            <div class="birds-choosing__item" data-bird-number="5">
+              <span class="birds-group__marker"></span
+              ><span class="birds-choosing__description">Синица</span>
             </div>
           </article>
           <article class="bird-description">
@@ -98,11 +104,11 @@
               Попробуйте угадать что это за птица и выберите один из вариантов
               текущего списка!
             </p>
-
             <section class="player disabled">
               <div class="player__img"></div>
               <div class="player__display">
                 <div class="player__title">******</div>
+                <div class="player__species"></div>
                 <div class="player__controls">
                   <div class="player__but"></div>
                   <div class="player__progress">
@@ -122,6 +128,7 @@
                 </div>
               </div>
             </section>
+            <div class="player__description"></div>
           </article>
         </section>
         <button class="next-level-btn">Next Level</button>

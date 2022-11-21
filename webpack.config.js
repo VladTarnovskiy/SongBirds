@@ -19,7 +19,7 @@ module.exports = {
         historyApiFallback: true,
         static: {
             directory: path.join(__dirname, './dist'),
-          },
+        },
         open: true,
         compress: true,
         port: 8080,
@@ -37,6 +37,14 @@ module.exports = {
         }),
         new CleanWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin(),
+        new CopyWebpackPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, './src/audio'),
+                    to: path.resolve(__dirname, './dist'),
+                },
+            ],
+        })
     ],
     module: {
         rules: [

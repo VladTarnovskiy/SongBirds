@@ -98,8 +98,14 @@ body {
         align-self: flex-start;
 
         .player__title {
-            border-bottom: $light-grey 2px solid;
+            border-bottom: $light-grey 1px solid;
             font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .player__species {
+            border-bottom: $light-grey 1px solid;
+            font-size: 1rem;
             margin-bottom: 15px;
         }
 
@@ -218,6 +224,10 @@ body {
     }
 }
 
+.player__description {
+    text-align: left;
+}
+
 .disabled {
     display: none;
 }
@@ -281,9 +291,13 @@ body {
     border-radius: 5px;
     margin-top: 20px;
     color: $white;
+    cursor: pointer;
 
     &:hover {
-        cursor: pointer;
         transform: scale(1.02);
     }
+}
+
+.next-level-btn.next-level-btn_active {
+    background-color: $green;
 }
