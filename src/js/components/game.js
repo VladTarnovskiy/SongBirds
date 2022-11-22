@@ -4,6 +4,8 @@ let level = 0
 let score = 0
 let levelCountScore = 5
 
+alert("Оцените пожалуйста мое задание завтра")
+
 //Audioplayer
 const play = document.querySelector('.player__but')
 const audio = new Audio();
@@ -323,3 +325,4 @@ function soundClick(url) {
     audioClick.src = url
     audioClick.autoplay = true;
 }
+

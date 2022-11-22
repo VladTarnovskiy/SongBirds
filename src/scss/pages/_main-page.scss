@@ -243,10 +243,18 @@ body {
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
-    height: 315px;
+    height: fit-content;
+
+    @include desktop-middle {
+        flex-direction: column;
+    }
 
     .birds-choosing {
         width: 48%;
+
+        @include desktop-middle {
+            margin-top: 20px;
+        }
 
         .birds-choosing__item {
             height: 50px;
@@ -284,6 +292,10 @@ body {
         box-sizing: border-box;
         border-radius: 5px;
         text-align: center;
+
+        @include desktop-middle {
+            order: -1;
+        }
     }
 }
 
