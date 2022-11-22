@@ -1,6 +1,20 @@
+.header__logo {
+    margin-top: 20px;
+    width: 200px;
+    height: 55px;
+    background-image: url(../../src/img/logo.svg);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+
+    &:hover {
+        transform: scale(1.03);
+    }
+}
+
 .bird-description {
     font-family: 'Arima Madurai', cursive;
-    width: 80%;
+    width: 90%;
     height: 80%;
     margin: auto;
     background: rgba($dark-grey, 0.6);
@@ -8,4 +22,33 @@
     border-radius: 5px;
     text-align: center;
     font-size: 40px;
+}
+
+.display-result {
+    font-size: 32px;
+}
+
+.start-btn,
+.start-page-btn {
+    width: 200px;
+    height: 60px;
+    border: 2px solid $dark;
+    border-radius: 5px;
+    background: none;
+    font-size: 18px;
+
+    &:hover {
+        transform: scale(1.02);
+        cursor: pointer;
+    }
+
+    a {
+        text-decoration: none;
+        color: $dark;
+        font-size: 32px;
+    }
+}
+
+.disabled {
+    display: none;
 }

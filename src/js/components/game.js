@@ -4,8 +4,6 @@ let level = 0
 let score = 0
 let levelCountScore = 5
 
-alert("Оцените пожалуйста мое задание завтра")
-
 //Audioplayer
 const play = document.querySelector('.player__but')
 const audio = new Audio();
@@ -139,7 +137,10 @@ birdsGroup.forEach((item, index) => {
                 scoreFlag = true
             }
             if (level == 5) {
-                window.location.href = './results.html'
+                localStorage.setItem('score', score);
+                setTimeout(() => {
+                    window.location.href = './results.html'
+                }, 1000)
             }
             birdsMarker[index].style.background = '#008966'
             nextLevelButton.classList.add('next-level-btn_active')
@@ -326,3 +327,4 @@ function soundClick(url) {
     audioClick.autoplay = true;
 }
 
+export default score

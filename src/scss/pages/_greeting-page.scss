@@ -35,6 +35,10 @@ body {
             background-image: url(../../src/img/logo.svg);
             background-size: cover;
             background-position: center;
+
+            &:hover {
+                transform: scale(1.03);
+            }
         }
 
         .game-link {

@@ -4,12 +4,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="../img/icon.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap"
       rel="stylesheet"
     />
     <title>Results</title>
   </head>
+  <header>
+    <a href="./greeting.html"><div class="header__logo"></div></a>
+  </header>
   <body class="body-background">
     <div class="bird-container bird-container--one">
       <div class="bird bird--one"></div>
@@ -27,8 +31,19 @@
       <div class="bird bird--four"></div>
     </div>
     <article class="bird-description">
-      <p class="bird-description__guide">Поздравляю!</p>
-      <p class="diplay-result">Score: <span class="score"></span></p>
+      <p class="bird-description__guide">Игра окончена!</p>
+      <p class="win-description disabled">
+        Поздравляю, вы прошли игру без ошибок!
+      </p>
+      <p class="display-result">
+        Score: <span class="result-score">0</span>/30
+      </p>
+      <button class="start-btn">
+        <a href="./index.html">Play again!</a>
+      </button>
+      <button class="start-page-btn disabled">
+        <a href="./greeting.html">Start page</a>
+      </button>
     </article>
   </body>
 </html>

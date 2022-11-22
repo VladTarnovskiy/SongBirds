@@ -39,6 +39,11 @@ body {
             background-image: url(../../src/img/logo.svg);
             background-size: cover;
             background-position: center;
+            cursor: pointer;
+
+            &:hover {
+                transform: scale(1.03);
+            }
         }
     }
 
