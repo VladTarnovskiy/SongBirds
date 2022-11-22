@@ -29,6 +29,10 @@ body {
         justify-content: space-between;
         align-items: center;
 
+        @include tablet {
+            flex-direction: column;
+        }
+
         .header__logo {
             width: 200px;
             height: 55px;
@@ -47,16 +51,27 @@ body {
     }
 
     .level-display {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
         background: rgba($green, 0.5);
         padding: 0;
         height: 40px;
         border-radius: 5px;
 
+        @include tablet-big {
+            height: 80px;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 40px);
+        }
+
+        @include tablet {
+            height: 120px;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(3, 40px);
+        }
+
         .level-display__item {
-            width: 15%;
+            // width: 15%;
             height: 100%;
             display: flex;
             justify-content: center;
@@ -83,6 +98,10 @@ body {
     padding: 15px;
     border-radius: 5px;
 
+    @include tablet-middle {
+        flex-direction: column;
+    }
+
     .player__img {
         width: 200px;
         height: 155px;
@@ -91,6 +110,14 @@ body {
         background-position: center;
         border-radius: 5px;
         margin-right: 40px;
+
+        @include tablet-middle {
+            margin-right: 0;
+        }
+
+        @include tablet {
+            width: 160px;
+        }
     }
 
     .player__img.hide-bird {
@@ -100,6 +127,10 @@ body {
     .player__display {
         flex-grow: 1;
         align-self: flex-start;
+
+        @include tablet-middle {
+            align-self: stretch;
+        }
 
         .player__title {
             border-bottom: $light-grey 1px solid;
@@ -160,12 +191,8 @@ body {
                     width: 20px;
                     height: 20px;
                     border-radius: 50%;
-                    background-color: $light-grey;
+                    background-color: $green-light;
                     cursor: pointer;
-
-                    &:hover {
-                        background-color: $green-light;
-                    }
                 }
 
                 .player__progress-time-current {
@@ -241,7 +268,7 @@ body {
 .birds-group {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: left;
     margin-top: 20px;
     height: fit-content;
 
@@ -254,6 +281,10 @@ body {
 
         @include desktop-middle {
             margin-top: 20px;
+        }
+
+        @include tablet-middle {
+            width: 80%;
         }
 
         .birds-choosing__item {
@@ -294,6 +325,7 @@ body {
         text-align: center;
 
         @include desktop-middle {
+            width: 90%;
             order: -1;
         }
     }
@@ -307,6 +339,7 @@ body {
     border-radius: 5px;
     margin-top: 20px;
     color: $white;
+    margin-bottom: 20px;
     cursor: pointer;
 
     &:hover {
