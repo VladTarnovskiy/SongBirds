@@ -130,7 +130,7 @@ birdsGroup.forEach((item, index) => {
 
 
         if (item.textContent.trim() == birdsData[level][birdNumber].name) {
-            if (!scoreFlag) {
+            if (scoreFlag == false) {
                 score += levelCountScore
                 scoreCounter.textContent = score
                 levelCountScore = 5
@@ -148,9 +148,10 @@ birdsGroup.forEach((item, index) => {
             getLinkToImageFl(birdsData[level][birdNumber].image)
             soundClick('./true-click.mp3')
         } else {
-            birdsMarker[index].style.background = 'red'
+
             soundClick('./false-click.mp3')
-            if (!scoreFlag) {
+            if (scoreFlag == false) {
+                birdsMarker[index].style.background = 'red'
                 if (levelCountScore > 0) {
                     levelCountScore -= 1
                 } else {

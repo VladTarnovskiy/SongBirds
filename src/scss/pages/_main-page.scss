@@ -46,8 +46,24 @@ body {
             }
         }
 
+        .game-link {
+            font-family: 'Arima Madurai', cursive;
+
+            &:hover {
+                transform: scale(1.02);
+                cursor: pointer;
+            }
+
+            a {
+                text-decoration: none;
+                color: rgb(228, 211, 211);
+                font-size: 32px;
+            }
+        }
+
         .header__score {
             font-size: 26px;
+            color: rgb(228, 211, 211);
         }
     }
 

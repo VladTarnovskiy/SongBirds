@@ -11,6 +11,7 @@ module.exports = {
         'main': path.resolve(__dirname, './src/js/index.js'),
         'greeting': path.resolve(__dirname, './src/js/greeting.js'),
         'results': path.resolve(__dirname, './src/js/results.js'),
+        'gallery': path.resolve(__dirname, './src/js/gallery.js'),
     },
     output: {
         path: path.resolve(__dirname, './dist'),
@@ -40,6 +41,11 @@ module.exports = {
             template: path.resolve(__dirname, './src/html/results.html'),
             filename: 'results.html',
             chunks: ['results']
+        }),
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, './src/html/gallery.html'),
+            filename: 'gallery.html',
+            chunks: ['gallery']
         }),
         new CleanWebpackPlugin(),
         new webpack.HotModuleReplacementPlugin(),
