@@ -7,6 +7,10 @@
 .header {
     margin-top: 0;
     position: relative;
+
+    @include tablet {
+        height: 110px;
+    }
 }
 
 .body-background {
@@ -29,6 +33,6 @@
     z-index: 20;
 
     @include tablet {
-        height: 79.9vh;
+        height: 83vh;
     }
 }
