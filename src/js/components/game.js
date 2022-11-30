@@ -271,6 +271,7 @@ const playerDes = sectionBirdInfo.querySelector('.player')
 nextLevelButton.addEventListener('click', () => {
     if (nextLevelButton.classList.contains('next-level-btn_active')) {
         nextLevelButton.classList.remove('next-level-btn_active')
+        isPlay = false
         play.classList.remove('pause')
         scoreFlag = false
         level += 1
