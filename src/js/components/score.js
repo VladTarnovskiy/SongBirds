@@ -1,5 +1,6 @@
 // import score from "./game"
 console.log()
+const dataLoader = document.querySelector('.loader')
 const resultScore = document.querySelector('.result-score')
 
 const gameEnded = document.querySelector('.bird-description__guide')

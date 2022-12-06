@@ -308,14 +308,6 @@ function displayLevel() {
     levelItems[level].classList.add('level-display__item_acive')
 }
 
-
-
-
-
-
-
-
-
 //different
 
 function getRandomNum(max) {
@@ -332,3 +324,5 @@ function soundClick(url) {
 }
 
 export default score
+
+
