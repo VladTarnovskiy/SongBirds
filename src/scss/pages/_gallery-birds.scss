@@ -1,0 +1,38 @@
+.player__description {
+    background: linear-gradient(rgba(255, 168, 76, 0.6) 0%, rgba(255, 123, 13, 0.6) 100%);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.header {
+    margin-top: 0;
+    position: relative;
+
+    @include tablet {
+        height: 110px;
+    }
+}
+
+.body-background {
+    padding-top: 20px;
+}
+
+.footer {
+    position: relative;
+    margin: 0;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.footer-list {
+    margin: 0;
+}
+
+.body-background.body-background_greeting {
+    height: 86.6vh;
+    z-index: 20;
+
+    @include tablet {
+        height: 83vh;
+    }
+}
