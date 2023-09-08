@@ -4,10 +4,10 @@
   "description": "Private repository for @vladtarnovskiy",
   "main": "index.js",
   "scripts": {
+    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open",
     "dev": "cross-env NODE_ENV=development webpack --mode development",
     "build": "cross-env NODE_ENV=production webpack --mode production",
-    "watch": "cross-env NODE_ENV=development webpack --mode development --watch",
-    "start": "cross-env NODE_ENV=development webpack-dev-server --mode development --open"
+    "watch": "cross-env NODE_ENV=development webpack --mode development --watch"
   },
   "repository": {
     "type": "git",
